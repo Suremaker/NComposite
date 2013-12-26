@@ -28,29 +28,7 @@ namespace NComposite
 			if (!_composites.TryGetValue(typeof(T), out composite))
 				throw new InvalidOperationException(string.Format("No composite of {0} type is mapped", typeof(T)));
 
-			return _proxyGenerator.CreateInterfaceProxyWithoutTarget<T>(new CompositeInterceptor(composite));
-		}
-	}
-
-	public class CompositeInterceptor : IInterceptor
-	{
-		private readonly IComposite _composite;
-
-		public CompositeInterceptor(IComposite composite)
-		{
-			_composite = composite;
-		}
-
-		public void Intercept(IInvocation invocation)
-		{
-			invocation.ReturnValue = FindBinding(invocation.Method).Invoke(null, Enumerable.Repeat<object>(null, 1).Concat(invocation.Arguments).ToArray());
-		}
-
-		private MethodInfo FindBinding(MethodInfo method)
-		{
-			return _composite.Mapping.MethodBindings
-				.Concat(_composite.Extensions.SelectMany(e => e.MethodBindings))
-				.First(b => b.Key == method).Value;
+			return _proxyGenerator.CreateInterfaceProxyWithoutTarget<T>(new CompositeInterceptor(composite, _proxyGenerator));
 		}
 	}
 }

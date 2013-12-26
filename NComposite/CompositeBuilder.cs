@@ -30,6 +30,8 @@ namespace NComposite
 
 		public void MapMethod(MethodInfo interfaceMethod, MethodInfo methodImplementation)
 		{
+			if (interfaceMethod == null || methodImplementation == null)
+				throw new ArgumentException(string.Format("Interface and implementation method has to be specified.\nInterface={0},\nImplementation={1}", interfaceMethod, methodImplementation));
 			if (!typeof(TInterface).IsAssignableFrom(interfaceMethod.DeclaringType))
 				throw new ArgumentException("Interface method has to be declared within interface type.");
 			if (!methodImplementation.IsStatic)

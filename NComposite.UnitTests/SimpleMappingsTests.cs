@@ -27,6 +27,19 @@ namespace NComposite.UnitTests
 		}
 
 		[Test]
+		public void Should_map_interface_to_context()
+		{
+			_factory.Load(new StatefulInterfaceMap());
+			var stateful = _factory.Create<IStatefulInterface>();
+			const string text = "some text";
+
+			Assert.That(stateful.GetText(), Is.Null);
+
+			stateful.SetText(text);
+			Assert.That(stateful.GetText(), Is.EqualTo(text));
+		}
+
+		[Test]
 		public void Should_not_allow_incomplete_method_mappings()
 		{
 			var exception = Assert.Throws<InvalidOperationException>(() => _factory.Load(new SimpleInterfaceMap(true)));

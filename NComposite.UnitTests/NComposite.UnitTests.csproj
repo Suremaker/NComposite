@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IStatefulInterface.cs" />
+    <Compile Include="Maps\StatefulInterfaceMap.cs" />
     <Compile Include="SimpleMappingsTests.cs" />
     <Compile Include="Interfaces\ISimpleInterface.cs" />
     <Compile Include="Maps\SimpleInterfaceMap.cs" />
