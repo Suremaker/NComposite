@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NComposite.Interfaces;
 
-namespace NComposite
+namespace NComposite.Internals
 {
-	public class CompositeBuilder<TInterface, TState> : ICompositeBuilder<TInterface, TState>
+	internal class CompositeBuilder<TInterface, TState> : ICompositeBuilder<TInterface, TState>
 	{
 		private readonly IDictionary<MethodInfo, MethodInfo> _methods = new Dictionary<MethodInfo, MethodInfo>();
 
@@ -63,7 +63,7 @@ namespace NComposite
 		}
 	}
 
-	public class Composite : IComposite
+	internal class Composite : IComposite
 	{
 		public Composite(TypeMapping mapping, TypeMapping[] extensions, Type[] inheritedTypes)
 		{

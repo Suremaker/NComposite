@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Castle.DynamicProxy;
 using NComposite.Interfaces;
+using NComposite.Internals;
 
 namespace NComposite
 {

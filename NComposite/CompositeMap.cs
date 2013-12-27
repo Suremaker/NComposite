@@ -1,23 +1,8 @@
 ﻿using NComposite.Interfaces;
+using NComposite.Internals;
 
 namespace NComposite
 {
-	/*public class ClassMap<TInterface, TState> : IClassMap
-	{
-		protected void MapPropertyGet<TArg>(Expression<Func<TInterface, TArg>> property, Func<IContext<TInterface, TState>, TArg> impl)
-		{
-
-		}
-		protected void MapPropertySet<TArg>(Expression<Func<TInterface, TArg>> property, Action<IContext<TInterface, TState>, TArg> impl)
-		{
-
-		}
-		protected void MapMethod<TArg>(Expression<Func<TInterface, Action<TArg>>> method, Action<IContext<TInterface, TState>, TArg> impl)
-		{
-
-		}
-	}*/
-
 	public abstract class CompositeMap<TInterface, TState> : ICompositeMap
 	{
 		public IComposite Map()

@@ -1,15 +1,15 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Reflection;
 using Castle.DynamicProxy;
 using NComposite.Interfaces;
 
-namespace NComposite
+namespace NComposite.Internals
 {
-	public class CompositeInterceptor : IInterceptor
+	internal class CompositeInterceptor : IInterceptor
 	{
 		private readonly IComposite _composite;
-		private object _state;
+		private readonly object _state;
 
 		public CompositeInterceptor(IComposite composite, ProxyGenerator proxyGenerator)
 		{

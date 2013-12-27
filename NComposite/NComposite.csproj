@@ -42,13 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompositeInterceptor.cs" />
     <Compile Include="CompositeMap.cs" />
-    <Compile Include="CompositeBuilder.cs" />
     <Compile Include="CompositeFactory.cs" />
     <Compile Include="ICompositeBuilder.cs" />
+    <Compile Include="Internals\CompositeBuilder.cs" />
+    <Compile Include="Internals\CompositeInterceptor.cs" />
+    <Compile Include="Internals\StateInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StateInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NComposite.Interfaces\NComposite.Interfaces.csproj">
@@ -59,6 +59,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

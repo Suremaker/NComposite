@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Castle.DynamicProxy;
 
-namespace NComposite
+namespace NComposite.Internals
 {
 	internal class StateInterceptor : IInterceptor
 	{
