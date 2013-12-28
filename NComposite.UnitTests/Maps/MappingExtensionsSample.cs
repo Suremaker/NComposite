@@ -7,12 +7,13 @@ namespace NComposite.UnitTests.Maps
 	{
 		protected override void Map(ICompositeBuilder<IMappingExtensionsSample, INoState> builder)
 		{
-			builder.MapAction(m => m.For(x => x.Action0).Use(Action0Impl));
-			builder.MapAction(m => m.For<string>(x => x.Action1).Use(Action1Impl));
-			builder.MapAction(m => m.For<int, string>(x => x.Action2).Use(Action2Impl));
-			builder.MapMethod(m => m.For<int>(x => x.Method0).Use(ctx => 2));
-			builder.MapMethod(m => m.For<int, string>(x => x.Method1).Use(Method1Impl));
-			builder.MapMethod(m => m.For<int, double, string>(x => x.Method2).Use(Method2Impl));
+			builder.MapMethods()
+				.For(x => x.Action0).Use(Action0Impl)
+				.For<string>(x => x.Action1).Use(Action1Impl)
+				.For<int, string>(x => x.Action2).Use(Action2Impl)
+				.For<int>(x => x.Method0).Use(ctx => 2)
+				.For<int, string>(x => x.Method1).Use(Method1Impl)
+				.For<int, double, string>(x => x.Method2).Use(Method2Impl);
 		}
 
 		private static string Method2Impl(IContext<IMappingExtensionsSample, INoState> arg1, int arg2, double arg3)

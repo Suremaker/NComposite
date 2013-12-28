@@ -20,5 +20,10 @@ namespace NComposite.Helpers
 				throw new ArgumentException("Given lambda expression is not in format 'x => x.MethodName': " + expression, e);
 			}
 		}
+
+		public static MethodInfo MethodCallToMethodInfo(this LambdaExpression expression)
+		{
+			return ((MethodCallExpression)expression.Body).Method;
+		}
 	}
 }

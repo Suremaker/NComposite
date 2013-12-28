@@ -1,15 +1,15 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace NComposite.Fluent
 {
-	internal class MethodBinder
+	internal class MethodBinder<TInterface, TContext>
 	{
 		public MethodInfo InterfaceMethod { private get; set; }
+		public MethodMapper<TInterface, TContext> MethodMapper { private get; set; }
 
-		protected Tuple<MethodInfo, MethodInfo> Bind(MethodInfo implementation)
+		protected IMethodMapper<TInterface, TContext> Bind(MethodInfo implementation)
 		{
-			return Tuple.Create(InterfaceMethod, implementation);
+			return MethodMapper.Map(InterfaceMethod, implementation);
 		}
 	}
 }

@@ -39,9 +39,13 @@
   <ItemGroup>
     <Compile Include="CompositeMap.cs" />
     <Compile Include="CompositeFactory.cs" />
-    <Compile Include="Fluent\IActionMapper.cs" />
+    <Compile Include="Fluent\ActionBinder.cs" />
+    <Compile Include="Fluent\FunctionBinder.cs" />
+    <Compile Include="Fluent\IActionBinder.cs" />
+    <Compile Include="Fluent\IFunctionBinder.cs" />
     <Compile Include="Fluent\IMethodMapper.cs" />
     <Compile Include="Fluent\MethodBinder.cs" />
+    <Compile Include="Fluent\MethodMapper.cs" />
     <Compile Include="Helpers\ExpressionExtensions.cs" />
     <Compile Include="ICompositeBuilder.cs" />
     <Compile Include="Internals\CompositeBuilder.cs" />

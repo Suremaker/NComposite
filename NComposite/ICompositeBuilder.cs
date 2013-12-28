@@ -18,8 +18,12 @@ namespace NComposite
 		public TState State { get; private set; }
 	}
 
-	public interface ICompositeBuilder<TInterface, TState>
+	public interface ICompositeBuilder
 	{
 		void MapMethod(MethodInfo interfaceMethod, MethodInfo methodImplementation);
+	}
+
+	public interface ICompositeBuilder<TInterface, TState> : ICompositeBuilder
+	{
 	}
 }
