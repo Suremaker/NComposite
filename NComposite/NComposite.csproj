@@ -35,19 +35,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositeMap.cs" />
     <Compile Include="CompositeFactory.cs" />
+    <Compile Include="Fluent\IActionMapper.cs" />
+    <Compile Include="Fluent\IMethodMapper.cs" />
+    <Compile Include="Fluent\MethodBinder.cs" />
+    <Compile Include="Helpers\ExpressionExtensions.cs" />
     <Compile Include="ICompositeBuilder.cs" />
     <Compile Include="Internals\CompositeBuilder.cs" />
     <Compile Include="Internals\CompositeInterceptor.cs" />
     <Compile Include="Internals\StateInterceptor.cs" />
+    <Compile Include="MappingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

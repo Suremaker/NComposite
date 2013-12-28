@@ -2,7 +2,8 @@
 
 namespace NComposite
 {
-	public interface IContext<TInterface, TState>
+	public interface IContext { }
+	public interface IContext<TInterface, TState> : IContext
 	{
 		TState State { get; }
 	}
