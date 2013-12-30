@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace NComposite.Fluent
+namespace NComposite.Fluent.Methods
 {
 	public interface IMethodMapper<TInterface, out TContext>
 	{

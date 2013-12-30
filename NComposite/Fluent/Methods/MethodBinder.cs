@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace NComposite.Fluent
+namespace NComposite.Fluent.Methods
 {
 	internal class MethodBinder<TInterface, TContext>
 	{

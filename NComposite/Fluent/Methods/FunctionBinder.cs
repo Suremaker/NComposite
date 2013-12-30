@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NComposite.Fluent
+namespace NComposite.Fluent.Methods
 {
 	internal class FunctionBinder<TInterface, TContext, TResult> : MethodBinder<TInterface, TContext>, IFunctionBinder<TInterface, TContext, TResult>
 	{

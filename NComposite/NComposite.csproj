@@ -33,19 +33,35 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.2.2\lib\net40-client\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DelegateDecompiler">
+      <HintPath>..\packages\DelegateDecompiler.0.8.3.0\lib\net40-Client\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection">
+      <HintPath>..\packages\Mono.Reflection.1.0.0.0\lib\Mono.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositeMap.cs" />
     <Compile Include="CompositeFactory.cs" />
-    <Compile Include="Fluent\ActionBinder.cs" />
-    <Compile Include="Fluent\FunctionBinder.cs" />
-    <Compile Include="Fluent\IActionBinder.cs" />
-    <Compile Include="Fluent\IFunctionBinder.cs" />
-    <Compile Include="Fluent\IMethodMapper.cs" />
-    <Compile Include="Fluent\MethodBinder.cs" />
-    <Compile Include="Fluent\MethodMapper.cs" />
+    <Compile Include="Fluent\Methods\ActionBinder.cs" />
+    <Compile Include="Fluent\Methods\FunctionBinder.cs" />
+    <Compile Include="Fluent\Methods\IActionBinder.cs" />
+    <Compile Include="Fluent\Methods\IFunctionBinder.cs" />
+    <Compile Include="Fluent\Methods\IMethodMapper.cs" />
+    <Compile Include="Fluent\Properties\IPropertyGetterBinder.cs" />
+    <Compile Include="Fluent\Properties\IPropertyMapper.cs" />
+    <Compile Include="Fluent\Methods\MethodBinder.cs" />
+    <Compile Include="Fluent\Methods\MethodMapper.cs" />
+    <Compile Include="Fluent\Properties\StateMapping\IPropertySetterBinder.cs" />
+    <Compile Include="Fluent\Properties\StateMapping\IPropertyToStateBinder.cs" />
+    <Compile Include="Fluent\Properties\PropertyGetterBinder.cs" />
+    <Compile Include="Fluent\Properties\PropertyMapper.cs" />
+    <Compile Include="PropertyMappingExtentions.cs" />
+    <Compile Include="Fluent\Properties\PropertySetterBinder.cs" />
+    <Compile Include="Fluent\Properties\StateMapping\PropertyToStateBinder.cs" />
+    <Compile Include="Fluent\Properties\StateMapping\StateMappings.cs" />
     <Compile Include="Helpers\ExpressionExtensions.cs" />
     <Compile Include="ICompositeBuilder.cs" />
     <Compile Include="Internals\CompositeBuilder.cs" />

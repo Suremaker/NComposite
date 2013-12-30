@@ -3,7 +3,7 @@ using NComposite.UnitTests.Interfaces;
 
 namespace NComposite.UnitTests.Maps
 {
-	class MappingExtensionsSample : CompositeMap<IMappingExtensionsSample>
+	class MappingExtensionsSampleMap : CompositeMap<IMappingExtensionsSample>
 	{
 		protected override void Map(ICompositeBuilder<IMappingExtensionsSample, INoState> builder)
 		{

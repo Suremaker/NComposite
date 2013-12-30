@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using NComposite.Helpers;
 
-namespace NComposite.Fluent
+namespace NComposite.Fluent.Methods
 {
 	class MethodMapper<TInterface, TContext> : IMethodMapper<TInterface, TContext>
 	{

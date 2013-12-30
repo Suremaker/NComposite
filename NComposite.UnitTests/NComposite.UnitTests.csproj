@@ -38,8 +38,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IMappingExtensionsSample.cs" />
+    <Compile Include="Interfaces\IPropertyExtensionsSample.cs" />
+    <Compile Include="Interfaces\IPropertyInterface.cs" />
     <Compile Include="Interfaces\IStatefulInterface.cs" />
-    <Compile Include="Maps\MappingExtensionsSample.cs" />
+    <Compile Include="Maps\MappingExtensionsSampleMap.cs" />
+    <Compile Include="Maps\PropertyExtensionsSampleMap.cs" />
+    <Compile Include="Maps\PropertyInterfaceMap.cs" />
     <Compile Include="Maps\StatefulInterfaceMap.cs" />
     <Compile Include="SimpleMappingsTests.cs" />
     <Compile Include="Interfaces\ISimpleInterface.cs" />

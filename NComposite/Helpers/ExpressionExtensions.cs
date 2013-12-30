@@ -25,5 +25,10 @@ namespace NComposite.Helpers
 		{
 			return ((MethodCallExpression)expression.Body).Method;
 		}
+
+		public static PropertyInfo PropertyGetterCallToProperty(this LambdaExpression expression)
+		{
+			return (PropertyInfo) ((MemberExpression)expression.Body).Member;
+		}
 	}
 }
