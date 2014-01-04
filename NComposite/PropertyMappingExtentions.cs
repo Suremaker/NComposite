@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
+using LambdaReflection;
 using NComposite.Fluent.Properties;
 using NComposite.Fluent.Properties.StateMapping;
-using NComposite.Helpers;
 
 namespace NComposite
 {
@@ -13,17 +13,17 @@ namespace NComposite
 			Expression<Func<TInterface, TArg>> interfacePropertySelector)
 		{
 			//TODO: refactor
-			return new PropertyToStateBinder<TInterface, TState, TArg>((PropertyMapper<TInterface, TState>)mapper, interfacePropertySelector.PropertyGetterCallToProperty());
+			return new PropertyToStateBinder<TInterface, TState, TArg>((PropertyMapper<TInterface, TState>)mapper, interfacePropertySelector.PropertyFromGetter());
 		}
 
 		public static IPropertyMapper<TInterface, TState> UseStateProperty<TInterface, TState, TArg>(this IPropertyGetterBinder<TInterface, TState, TArg> binder, Expression<Func<TState, TArg>> statePropertySelector)
 		{
-			return binder.Use(StateMappings.GenerateGetter<TInterface, TState, TArg>(statePropertySelector.PropertyGetterCallToProperty()));
+			return binder.Use(StateMappings.GenerateGetter<TInterface, TState, TArg>(statePropertySelector.PropertyFromGetter()));
 		}
 
 		public static IPropertyMapper<TInterface, TState> UseStateProperty<TInterface, TState, TArg>(this IPropertySetterBinder<TInterface, TState, TArg> binder, Expression<Func<TState, TArg>> statePropertySelector)
 		{
-			return binder.Use(StateMappings.GenerateSetter<TInterface, TState, TArg>(statePropertySelector.PropertyGetterCallToProperty()));
+			return binder.Use(StateMappings.GenerateSetter<TInterface, TState, TArg>(statePropertySelector.PropertyFromGetter()));
 		}
 	}
 }

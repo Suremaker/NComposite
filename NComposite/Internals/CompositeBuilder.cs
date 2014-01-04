@@ -52,9 +52,8 @@ namespace NComposite.Internals
 			if (interfaceParams.Length != implementationParams.Length)
 				throw new ArgumentException(string.Format("Method implementation signature has to match to interface method"));
 
-			for (int i = 0; i < interfaceParams.Length; ++i)
-				if (interfaceParams[i].ParameterType != implementationParams[i].ParameterType || interfaceParams[i].IsOut != implementationParams[i].IsOut)
-					throw new ArgumentException(string.Format("Method implementation signature has to match to interface method"));
+			if (interfaceParams.Where((t, i) => t.ParameterType != implementationParams[i].ParameterType || t.IsOut != implementationParams[i].IsOut).Any())
+				throw new ArgumentException(string.Format("Method implementation signature has to match to interface method"));
 		}
 
 		bool CheckContextParameter(ParameterInfo parameter)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using NComposite.Helpers;
+using LambdaReflection;
 
 namespace NComposite.Fluent.Methods
 {
@@ -82,7 +82,7 @@ namespace NComposite.Fluent.Methods
 
 		private MethodInfo GetMethod(LambdaExpression expression)
 		{
-			return expression.DelegateResultToMethodInfo();
+			return expression.MethodFromDelegateResult();
 		}
 	}
 }

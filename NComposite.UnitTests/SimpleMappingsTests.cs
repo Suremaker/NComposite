@@ -74,7 +74,6 @@ namespace NComposite.UnitTests
 		}
 
 		[Test]
-		[Ignore("WIP")]
 		public void Should_map_properties_with_fluent_mapping()
 		{
 			Assert.DoesNotThrow(() => _factory.Load(new PropertyExtensionsSampleMap()));

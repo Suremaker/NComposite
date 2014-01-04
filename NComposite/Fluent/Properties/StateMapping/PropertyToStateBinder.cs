@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using NComposite.Helpers;
+using LambdaReflection;
 
 namespace NComposite.Fluent.Properties.StateMapping
 {
@@ -19,9 +19,9 @@ namespace NComposite.Fluent.Properties.StateMapping
 		public IPropertyMapper<TInterface, TState> UseStateProperty(Expression<Func<TState, TArg>> statePropertySelector)
 		{
 			if(_interfaceProperty.GetGetMethod()!=null)
-				_mapper.Bind(_interfaceProperty.GetGetMethod(), StateMappings.GenerateGetter<TInterface, TState, TArg>(statePropertySelector.PropertyGetterCallToProperty()).Method);
+				_mapper.Bind(_interfaceProperty.GetGetMethod(), StateMappings.GenerateGetter<TInterface, TState, TArg>(statePropertySelector.PropertyFromGetter()).Method);
 			if(_interfaceProperty.GetSetMethod()!=null)
-				_mapper.Bind(_interfaceProperty.GetSetMethod(), StateMappings.GenerateSetter<TInterface, TState, TArg>(statePropertySelector.PropertyGetterCallToProperty()).Method);
+				_mapper.Bind(_interfaceProperty.GetSetMethod(), StateMappings.GenerateSetter<TInterface, TState, TArg>(statePropertySelector.PropertyFromGetter()).Method);
 			return _mapper;
 		}
 	}
